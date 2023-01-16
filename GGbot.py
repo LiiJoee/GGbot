@@ -10,6 +10,13 @@ def start(message):
 
 @bot.message_handler()
 def get_user_text(message):
-    bot.send_message(message.chat.id, message, parse_mode='html')
+    if message.text == "Hello":
+        bot.send_message(message.chat.id, "И тебе привет", parse_mode='html')
+    elif message.text == 'id':
+        bot.send_message(message.chat.id, f"Твой <b>ID</b>: {message.from_user.id}", parse_mode='html')
+    else bot.send_message(message.chat.id, "<b>Я тебя не понимаю</b>", parse_mode='html')
+
+
+
 
 bot.polling(none_stop=True)
