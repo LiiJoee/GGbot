@@ -16,7 +16,7 @@ def get_user_text(message):
         bot.send_message(message.chat.id, f"Твой <b>ID</b>: {message.from_user.id}", parse_mode='html')
     elif message.text == 'photo':
         photo = open('i_s.jpg', 'rb')
-        bot.send_message(message.chat.id, photo)
+        bot.send_photo(message.chat.id, photo)
     else:
         bot.send_message(message.chat.id, f'<b>Я тебя не понимаю</b>', parse_mode='html')
 
